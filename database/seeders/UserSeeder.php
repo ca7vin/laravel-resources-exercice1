@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class UserSeeder extends Seeder
 {
     /**
@@ -16,13 +18,13 @@ class UserSeeder extends Seeder
     {
         //
         DB::table('users')->insert([
-            'name' => '',
-            'firstname' => '',
-            'age' => '',
-            'borndate' => '',
-            'email' => '',
-            'password' => '',
-            'album' => '',
+            'name' => 'Van der Ghinst',
+            'firstname' => 'Calvin',
+            'age' => '27',
+            'borndate' => '1994-12-05',
+            'email' => 'ca7vin@gmail.com',
+            'password' => Hash::make('mostwanted12'),
+            'album' => '4',
         ]);
     }
 }
