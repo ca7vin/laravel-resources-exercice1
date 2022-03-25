@@ -16,7 +16,7 @@
                 </ul>
             </div>
         @endif
-        <a class='btn btn-success' href='{{ route('album.create') }}' role='button'>Create</a>
+        <a class='btn btn-success' href='{{ route('albums.create') }}' role='button'>Create</a>
         <table class='table'>
             <thead>
                 <tr>
@@ -38,12 +38,12 @@
                         <td>{{ $album->photo }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
-                                <form action='{{ route('album.destroy', $album->id) }}' method='post'>
+                                <form action='{{ route('albums.destroy', $album->id) }}' method='post'>
                                     @csrf
                                     <button class=btn btn-danger type=submit>Delete</button>
                                 </form>
-                                <a class='btn btn-primary' href='{{ route('album.edit', $album->id) }}' role='button'>Edit</a>
-                                <a class='btn btn-primary' href='{{ route('album.read', $album->id) }}' role='button'>Read</a>
+                                <a class='btn btn-primary' href='{{ route('albums.edit', $album->id) }}' role='button'>Edit</a>
+                                <a class='btn btn-primary' href='{{ route('albums.show', $album->id) }}' role='button'>Read</a>
                             </div>
                         </td>
                     </tr>

@@ -17,14 +17,5 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('users')->insert([
-            'name' => 'Van der Ghinst',
-            'firstname' => 'Calvin',
-            'age' => '27',
-            'borndate' => '1994-12-05',
-            'email' => 'ca7vin@gmail.com',
-            'password' => Hash::make('mostwanted12'),
-            'album' => '4',
-        ]);
     }
 }

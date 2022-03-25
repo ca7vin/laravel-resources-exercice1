@@ -16,7 +16,7 @@
                 </ul>
             </div>
         @endif
-        <a class='btn btn-success' href='{{ route('photo.create') }}' role='button'>Create</a>
+        <a class='btn btn-success' href='{{ route('photos.create') }}' role='button'>Create</a>
         <table class='table'>
             <thead>
                 <tr>
@@ -25,6 +25,7 @@
                     <th scope='col'>nom</th>
                     <th scope='col'>lien</th>
                     <th scope='col'>album</th>
+                    <th scope='col'>favori</th>
                 </tr> {{-- all_tr_anchor --}}
             </thead>
             <tbody>
@@ -34,14 +35,15 @@
                         <td>{{ $photo->nom }}</td>
                         <td>{{ $photo->lien }}</td>
                         <td>{{ $photo->album }}</td>
+                        <td>{{ $photo->favori }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
-                                <form action='{{ route('photo.destroy', $photo->id) }}' method='post'>
+                                <form action='{{ route('photos.destroy', $photo->id) }}' method='post'>
                                     @csrf
                                     <button class=btn btn-danger type=submit>Delete</button>
                                 </form>
-                                <a class='btn btn-primary' href='{{ route('photo.edit', $photo->id) }}' role='button'>Edit</a>
-                                <a class='btn btn-primary' href='{{ route('photo.read', $photo->id) }}' role='button'>Read</a>
+                                <a class='btn btn-primary' href='{{ route('photos.edit', $photo->id) }}' role='button'>Edit</a>
+                                <a class='btn btn-primary' href='{{ route('photos.show', $photo->id) }}' role='button'>Read</a>
                             </div>
                         </td>
                     </tr>

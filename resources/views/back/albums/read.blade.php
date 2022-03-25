@@ -21,7 +21,7 @@
                     <td>{{ $album->auteur }}</td>
                     <td>{{ $album->photo }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('album.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('albums.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

@@ -11,7 +11,7 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('album.update' , $album->id) }}' method='post'>
+        <form action='{{ route('albums.update' , $album->id) }}' method='post'>
             @csrf
             <div>
                 <label for=''>nom</label>

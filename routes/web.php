@@ -33,7 +33,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', Login::class)->name('login');
+// Route::get('/', Login::class)->name('login');
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/login', Login::class)->name('login');
@@ -55,29 +55,8 @@ Route::middleware('auth')->group(function () {
 });
 
 // User
-// Route::get('/back/users', [UserController::class, 'index'])->name('user.index');
-// Route::get('/back/users/create', [UserController::class, 'create'])->name('user.create');
-// Route::post('/back/users/store', [UserController::class, 'store'])->name('user.store');
-// Route::get('/back/users/{id}/read', [UserController::class, 'read'])->name('user.read');
-// Route::get('/back/users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
-// Route::post('/back/users/{id}/update', [UserController::class, 'update'])->name('user.update');
-// Route::post('/back/users/{id}/delete', [UserController::class, 'destroy'])->name('user.destroy');
 Route::resource('users', UserController::class);
 // Album
-// Route::get('/back/albums', [AlbumController::class, 'index'])->name('album.index');
-// Route::get('/back/albums/create', [AlbumController::class, 'create'])->name('album.create');
-// Route::post('/back/albums/store', [AlbumController::class, 'store'])->name('album.store');
-// Route::get('/back/albums/{id}/read', [AlbumController::class, 'read'])->name('album.read');
-// Route::get('/back/albums/{id}/edit', [AlbumController::class, 'edit'])->name('album.edit');
-// Route::post('/back/albums/{id}/update', [AlbumController::class, 'update'])->name('album.update');
-// Route::post('/back/albums/{id}/delete', [AlbumController::class, 'destroy'])->name('album.destroy');
 Route::resource('albums', AlbumController::class);
 // Photo
-// Route::get('/back/photos', [PhotoController::class, 'index'])->name('photo.index');
-// Route::get('/back/photos/create', [PhotoController::class, 'create'])->name('photo.create');
-// Route::post('/back/photos/store', [PhotoController::class, 'store'])->name('photo.store');
-// Route::get('/back/photos/{id}/read', [PhotoController::class, 'read'])->name('photo.read');
-// Route::get('/back/photos/{id}/edit', [PhotoController::class, 'edit'])->name('photo.edit');
-// Route::post('/back/photos/{id}/update', [PhotoController::class, 'update'])->name('photo.update');
-// Route::post('/back/photos/{id}/delete', [PhotoController::class, 'destroy'])->name('photo.destroy');
 Route::resource("photos", PhotoController::class);

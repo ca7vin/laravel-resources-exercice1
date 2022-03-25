@@ -16,7 +16,7 @@
                 </ul>
             </div>
         @endif
-        <a class='btn btn-success' href='{{ route('user.create') }}' role='button'>Create</a>
+        <a class='btn btn-success' href='{{ route('users.create') }}' role='button'>Create</a>
         <table class='table'>
             <thead>
                 <tr>
@@ -44,12 +44,12 @@
                         <td>{{ $user->album }}</td>
                         <td> {{-- all_td_anchor --}}
                             <div class='d-flex'>
-                                <form action='{{ route('user.destroy', $user->id) }}' method='post'>
+                                <form action='{{ route('users.destroy', $user->id) }}' method='post'>
                                     @csrf
                                     <button class=btn btn-danger type=submit>Delete</button>
                                 </form>
-                                <a class='btn btn-primary' href='{{ route('user.edit', $user->id) }}' role='button'>Edit</a>
-                                <a class='btn btn-primary' href='{{ route('user.read', $user->id) }}' role='button'>Read</a>
+                                <a class='btn btn-primary' href='{{ route('users.edit', $user->id) }}' role='button'>Edit</a>
+                                <a class='btn btn-primary' href='{{ route('users.show', $user->id) }}' role='button'>Read</a>
                             </div>
                         </td>
                     </tr>

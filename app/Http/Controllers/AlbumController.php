@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AlbumController extends Controller
@@ -15,7 +16,8 @@ class AlbumController extends Controller
     }
     public function create()
     {
-        return view("/back/albums/create");
+        $users = User::all();
+        return view("/back/albums/create", compact("users"));
     }
     public function store(Request $request)
     {
@@ -31,7 +33,10 @@ class AlbumController extends Controller
         $album->auteur = $request->auteur;
         $album->photo = $request->photo;
         $album->save(); // store_anchor
-        return redirect()->route("album.index")->with('message', "Successful storage !");
+        $createur = User::find($request->auteur);
+        $createur->album += 1;
+        $createur->save(); // store_anchor
+        return redirect()->route("albums.index")->with('message', "Successful storage !");
     }
     public function read($id)
     {
@@ -57,7 +62,7 @@ class AlbumController extends Controller
         $album->auteur = $request->auteur;
         $album->photo = $request->photo;
         $album->save(); // update_anchor
-        return redirect()->route("album.index")->with('message', "Successful update !");
+        return redirect()->route("albums.index")->with('message', "Successful update !");
     }
     public function destroy($id)
     {

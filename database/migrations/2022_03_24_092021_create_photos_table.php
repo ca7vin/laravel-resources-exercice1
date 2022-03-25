@@ -18,6 +18,7 @@ class CreatePhotosTable extends Migration
             $table->string('nom');
             $table->string('lien');
             $table->string('album');
+            $table->string('favori');
             $table->timestamps();
         });
     }

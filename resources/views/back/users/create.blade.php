@@ -11,7 +11,7 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('user.store') }}' method='post'>
+        <form action='{{ route('users.store') }}' method='post'>
             @csrf
             <div>
                 <label for=''>name</label>

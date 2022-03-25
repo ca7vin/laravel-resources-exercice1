@@ -27,7 +27,7 @@
                     <td>{{ $user->password }}</td>
                     <td>{{ $user->album }}</td>
                     <td> {{-- read_td_anchor --}}
-                        <a class='btn btn-primary' href='{{ route('user.index') }}' role='button'>Back</a>
+                        <a class='btn btn-primary' href='{{ route('users.index') }}' role='button'>Back</a>
                     </td>
                 </tr>
             </tbody>

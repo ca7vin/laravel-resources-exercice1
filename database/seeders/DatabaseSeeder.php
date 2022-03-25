@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Album;
+use App\Models\Photo;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,10 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            AlbumSeeder::class,
-            UserSeeder::class,
-            PhotoSeeder::class,
-        ]);    
+        User::factory()->count(5)->create();   
+        Album::factory()->count(10)->create();   
+        Photo::factory()->count(20)->create();   
 		}
 }

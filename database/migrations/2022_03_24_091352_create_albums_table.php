@@ -18,7 +18,7 @@ class CreateAlbumsTable extends Migration
             $table->string('nom');
             $table->string('description');
             $table->string('auteur');
-            $table->string('photo');
+            $table->integer('photo')->unsigned();
             $table->timestamps();
         });
     }

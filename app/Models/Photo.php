@@ -13,6 +13,7 @@ class Photo extends Model
         'nom',
         'lien',
         'album',
+        'favori',
     ]; // model_anchor
      
     protected $table = 'photos';

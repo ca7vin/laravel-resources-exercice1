@@ -11,7 +11,7 @@
                 </ul>
             </div>
         @endif
-        <form action='{{ route('album.store') }}' method='post'>
+        <form action='{{ route('albums.store') }}' method='post'>
             @csrf
             <div>
                 <label for=''>nom</label>
@@ -22,8 +22,17 @@
                 <input type='text' name='description'>
             </div>
             <div>
-                <label for=''>auteur</label>
-                <input type='text' name='auteur'>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">Auteur</label>
+                    </div>
+                    <select name='auteur' class="custom-select" id="inputGroupSelect01">
+                      <option selected>Choose...</option>
+                      @foreach ($users as $user)
+                      <option value="{{ $user->id }}">{{ $user->name }} {{ $user->firstname }}</option>
+                      @endforeach
+                    </select>
+                  </div>
             </div>
             <div>
                 <label for=''>photo</label>
